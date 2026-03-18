@@ -1,0 +1,55 @@
+package com.aulascom.fluxodetelas.screen
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+
+@Composable
+fun PedidoScreen(navController: NavController) {
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.Gray)
+            .padding(32.dp)
+    ){
+        Text(
+            text = "PEDIDOS",
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp
+        )
+
+        Button(
+            onClick = {
+                navController.navigate("menu")
+            },
+            colors = ButtonDefaults.buttonColors(
+                Color.White
+            ),
+            modifier = Modifier.align(Alignment.Center)
+        ) {
+            Text(
+                text = "VOLTAR",
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp
+            )
+        }
+    }
+}
